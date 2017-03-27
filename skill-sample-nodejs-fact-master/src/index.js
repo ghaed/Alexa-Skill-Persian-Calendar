@@ -31,7 +31,7 @@ var persianMonths = {
     "12": "Esfand"
     }
 
-var dateString = "Today is day " + dd + " of month " + persianMonths[mm] + " of year " +  yy + " according to persian calendar"
+var dateString = "Today is day " + dd + " of month " + persianMonths[mm] + " of year " +  yyyy + " according to persian calendar"
 
 var languageStrings = {
     "en": {
