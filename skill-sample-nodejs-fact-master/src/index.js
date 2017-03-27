@@ -2,31 +2,42 @@
 var Alexa = require('alexa-sdk');
 var APP_ID = "amzn1.ask.skill.0f11504d-28e1-49a8-8830-4f6eb9a4171a";  // TODO replace with your app ID (OPTIONAL).
 
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear()-2017+1396;
+/*
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+*/
+var persianMonths = {
+    "1": "Farvardin",
+    "2": "Ordibehesht",
+    "3": "Khordad",
+    "4": "Tir",
+    "5": "Mordad",
+    "6": "Shahrivar",
+    "7": "Mehr",
+    "8": "Aban",
+    "9": "Azar",
+    "10": "Dey",
+    "11": "Bahman",
+    "12": "Esfand"
+    }
+
+var dateString = "Today is day " + dd + " of month " + persianMonths[mm] + " of year " +  yy + " according to persian calendar"
+
 var languageStrings = {
     "en": {
         "translation": {
             "FACTS": [
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Sadaf is Hassan's love."
+                "Hassan loves en Sadaf."
             ],
             "SKILL_NAME" : "Persian Calendar",
             "GET_FACT_MESSAGE" : "Here's your fact: ",
@@ -38,27 +49,7 @@ var languageStrings = {
     "en-US": {
         "translation": {
             "FACTS": [
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Hassan loves Sadaf.",
-                "Sadaf is Hassan's love."
+                dateString
             ],
             "SKILL_NAME" : "Persian Calendar"
         }
